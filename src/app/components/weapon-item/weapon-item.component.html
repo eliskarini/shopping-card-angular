@@ -1,0 +1,16 @@
+<div class="card h-100">
+    <div class="card-body p-4">
+        <div class="py-2"><strong>{{ item.title }}</strong></div>
+        <div class="py-2">Price: {{ item.price }}</div>
+        <div class="text-center py-2"><img class="img-height" src="{{item.imgUrl}}" alt=""></div>
+        <div class="py-2">{{ item.desc }}</div>
+    </div>
+    <div class="card-footer bg-white">
+        <button 
+        class="float-right btn"
+        [ngClass]="item.addedToCart ? 'btn-secondary' : 'btn-primary'" 
+        (click)="onSelectedItemHandler(item)">
+            <span class="mdi mdi-cart"></span> {{item.addedToCart ? 'Added to cart!' : 'Add to cart'}}
+        </button>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+.img-height {
+    height: 100px;
+}
+
+.btn-primary-outline:hover {
+    background-color: lightgrey;
+}

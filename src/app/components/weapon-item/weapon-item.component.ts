@@ -9,7 +9,7 @@ import { WeaponService } from 'src/app/services/weapon.service';
 export class WeaponItemComponent implements OnInit {
 @Input() item: object;
 
-constructor(private weaponService:WeaponService) {}
+constructor(public weaponService:WeaponService) {}
 
 ngOnInit() {
 }

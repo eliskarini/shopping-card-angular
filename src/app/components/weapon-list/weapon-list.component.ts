@@ -10,8 +10,8 @@ import { ToastrService } from 'ngx-toastr';
 export class WeaponListComponent implements OnInit {
 
   constructor(
-    private weaponService: WeaponService,
-    private toastr: ToastrService
+    public weaponService: WeaponService,
+    public toastr: ToastrService
     ) { }
     
   weaponData = this.weaponService.weaponData;
@@ -21,11 +21,23 @@ export class WeaponListComponent implements OnInit {
 
   proceedPurchase(): void {
     if (this.weaponService.getCartTotalPrice() == 0) {
-      this.toastr.info('Please buy something');
+      this.toastr.info('Please buy something!');
     } else if (this.weaponService.getCartTotalPrice() > 1000) {
       this.toastr.error('You don\'t have enough gold!');
     }else {
       this.toastr.success('Transaction Success!');
     }
+  }
+
+  getButtonA(): void {
+    this.toastr.info('Welcome!');
+  }
+
+  getButtonB(): void {
+    this.toastr.error('Bye');
+  }
+
+  getButtonC(): void {
+    this.toastr.success('Hello');
   }
 }
